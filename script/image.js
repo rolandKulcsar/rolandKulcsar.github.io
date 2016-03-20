@@ -93,7 +93,7 @@ function drawRectToCanvas(x, y, width, height, color) {
     ctx.stroke();
 }
 
-function ccvDetect(canvas) {
+function ccvDetect() {
     var start = performance.now();
     var faces = ccv.detect_objects({
         "canvas": (ccv.pre(canvas)),
@@ -110,23 +110,21 @@ function ccvDetect(canvas) {
         var face = faces[i];
         drawRectToCanvas(face.x, face.y, face.width, face.height, 'rgba(255, 0, 0, 0.75)');
     }
-
-    return faces, (end - start);
 }
 
 function jsObjectDetect() {
-    var classifier = objectdetect["frontalface"];
+    var classifier = objectdetect.frontalface;
     var detector = new objectdetect.detector(canvas.width, canvas.height, 2, classifier);
 
     var start = performance.now();
-    var faces = detector.detect(canvas);
+    var rects = detector.detect(canvas);
     var end = performance.now();
 
     elapsedTimeLabel.innerHTML = "Elapsed time: " + (end - start) + " ms";
 
-    for (var i = 0; i < faces.length; ++i) {
-        var face = faces[i];
-        drawRectToCanvas(face[0], face[1], face[2], face[3], 'rgba(0, 255, 255, 0.75)');
+    for (var i = 0; i < rects.length; ++i) {
+        var rect = rects[i];
+        drawRectToCanvas(rect[0], rect[1], rect[2], rect[3], 'rgba(0, 255, 255, 0.75)');
     }
 }
 
