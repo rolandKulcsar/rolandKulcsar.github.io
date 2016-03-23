@@ -1,78 +1,49 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Face tracking in images</title>
+    <title>Voronoi Diagram Drawer</title>
     <meta charset="utf-8" />
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
-
         body {
-            font-family: 'Lato';
+            font-family: 'Segoe UI';
             background-color: #f0f0f0;
             margin: 0px auto;
-            max-width: 1150px;
-        }
-
-        #canvas_overlay {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-        }
-
-        #container {
-            position: relative;
-            width: 1280px;
-            height: 720px;
         }
 
         #content {
-            margin-top: 70px;
-            margin-left: 100px;
-            margin-right: 100px;
-            max-width: 950px;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        .btn {
-            font-family: 'Lato';
-            font-size: 16px;
+        #canvas_voronoi {
+            height: 600px;
+            width: 600px;
+            border: 4px solid black;
+        }
+
+            #canvas_voronoi:hover {
+                cursor: crosshair;
+            }
+
+        #author {
+            color: #c0c0c0
         }
     </style>
 </head>
 <body>
     <div id="content">
-        <h1>Face tracking in images</h1>
-        <p>Select a library and image</p>
+        <h1>Brute-force Voronoi diagram drawer</h1>
 
-        <select id="select_library">
-            <option value="ccv">ccv</option>
-            <option value="jsobjectdetect">js-objectdetect</option>
-            <option value="clmtrackr">clmtrackr</option>
-        </select>
-
-        <input type="file" class="btn" id="files" name="files[]"/>
-        <input type="button" class="btn" onclick="onStartClick()" value="start">
-
-        <p id="label_elapsed_time"></p>
-
-        <div id="container">
-            <canvas id="canvas_image" width="1280" height="720"></canvas>
-            <canvas id="canvas_overlay" width="1280" height="720"></canvas>
+        <div>
+            <canvas id="canvas_voronoi" width="600" height="600"></canvas>
+        </div>
+        <div>
+            <label id="author">Created by Roland Kulcsar @BME</label>
         </div>
     </div>
 
-    <script type="text/javascript" src="script/image.js"></script>
-
-    <script type="text/javascript" src="script/ccv/ccv.js"></script>
-    <script type="text/javascript" src="script/ccv/face.js"></script>
-
-    <script type="text/javascript" src="script/objectdetect/objectdetect.js"></script>
-    <script type="text/javascript" src="script/objectdetect/objectdetect.frontalface.js"></script>
-    <script type="text/javascript" src="script/objectdetect/objectdetect.profileface.js"></script>
-    <script type="text/javascript" src="script/objectdetect/objectdetect.mouth.js"></script>
-    <script type="text/javascript" src="script/objectdetect/objectdetect.eye.js"></script>
-    <script type="text/javascript" src="script/objectdetect/objectdetect.nose.js"></script>
-
-    <script src="script/clmtrackr/model_pca_20_svm.js"></script>
-    <script src="script/clmtrackr/clmtrackr.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
