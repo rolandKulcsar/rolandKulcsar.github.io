@@ -4,8 +4,10 @@
     <title>Voronoi Diagram Drawer</title>
     <meta charset="utf-8" />
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+
         body {
-            font-family: 'Segoe UI';
+            font-family: 'Lato';
             background-color: #f0f0f0;
             margin: 0px auto;
         }
@@ -18,9 +20,9 @@
         }
 
         #canvas_voronoi {
-            height: 600px;
-            width: 600px;
-            border: 4px solid black;
+            height: 500px;
+            width: 500px;
+            border: 3px solid black;
         }
 
             #canvas_voronoi:hover {
@@ -28,16 +30,16 @@
             }
 
         #author {
-            color: #c0c0c0
+            color: #c0c0c0;
         }
     </style>
 </head>
 <body>
     <div id="content">
-        <h1>Brute-force Voronoi diagram drawer</h1>
+        <h2>Brute-force Voronoi diagram drawer</h2>
 
         <div>
-            <canvas id="canvas_voronoi" width="600" height="600"></canvas>
+            <canvas id="canvas_voronoi" width="500" height="500"></canvas>
         </div>
         <div>
             <label id="author">Created by Roland Kulcsar @BME</label>
