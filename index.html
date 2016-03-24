@@ -29,23 +29,44 @@
                 cursor: crosshair;
             }
 
+        #control {
+            padding: 7px 7px 7px 7px;
+        }
+
+        #select_distance {
+            font-family: 'Lato';
+            margin-left: 5px;
+        }
+
         #author {
             color: #c0c0c0;
+        }
+
+        #button_clear {
+            font-family: 'Lato';
+            width: 80px;
+            margin-left: 205px;
         }
     </style>
 </head>
 <body>
     <div id="content">
-        <h2>Brute-force Voronoi diagram drawer</h2>
-
+        <h2>Voronoi diagram drawer</h2>
+        <label id="author">Created by Roland Kulcsar @BME</label>
+        <br /><br />
         <div>
             <canvas id="canvas_voronoi" width="500" height="500"></canvas>
         </div>
-        <div>
-            <label id="author">Created by Roland Kulcsar @BME</label>
+        <div id="control">
+            <label>Distance metric:</label>
+            <select id="select_distance">
+                <option value="euclidean">Euclidean</option>
+                <option value="manhattan">Manhattan</option>
+                <option value="3norm">3 Norm</option>
+            </select>
+            <input type="button" id="button_clear" onclick="onClear()" value="Clear">
         </div>
     </div>
-
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
