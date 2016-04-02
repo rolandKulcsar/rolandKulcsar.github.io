@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Voronoi Diagram Drawer</title>
+    <title>Face Tracking Demo</title>
     <meta charset="utf-8" />
     <style>
         @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
@@ -10,63 +10,53 @@
             font-family: 'Lato';
             background-color: #f0f0f0;
             margin: 0px auto;
+            max-width: 1150px;
+        }
+
+        #canvas_overlay {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #container {
+            position: relative;
+            width: 1280px;
+            height: 720px;
         }
 
         #content {
-            position: fixed;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            margin-top: 70px;
+            margin-left: 100px;
+            margin-right: 100px;
+            max-width: 950px;
         }
 
-        #canvas_voronoi {
-            height: 500px;
-            width: 500px;
-            border: 3px solid black;
-        }
-
-            #canvas_voronoi:hover {
-                cursor: crosshair;
-            }
-
-        #control {
-            padding: 7px 7px 7px 7px;
-        }
-
-        #select_distance {
+        .btn {
             font-family: 'Lato';
-            margin-left: 5px;
-        }
-
-        #author {
-            color: #c0c0c0;
-        }
-
-        #button_clear {
-            font-family: 'Lato';
-            width: 80px;
-            margin-left: 205px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <div id="content">
-        <h2>Voronoi diagram drawer</h2>
-        <label id="author">Created by Roland Kulcsar @BME</label>
-        <br /><br />
-        <div>
-            <canvas id="canvas_voronoi" width="500" height="500"></canvas>
-        </div>
-        <div id="control">
-            <label>Distance metric:</label>
-            <select id="select_distance">
-                <option value="euclidean">Euclidean</option>
-                <option value="manhattan">Manhattan</option>
-                <option value="3norm">3 Norm</option>
-            </select>
-            <input type="button" id="button_clear" onclick="onClear()" value="Clear">
-        </div>
+    <div class="content">
+        <h1>Face tracking demo</h1>
+        <table>
+            <tr>
+                <td>
+                    <a href="image.html">
+                        <p>Face detection on images</p>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="video.html">
+                        <p>Face tracking on videos</p>
+                    </a>
+                </td>
+            </tr>
+        </table>
     </div>
-    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

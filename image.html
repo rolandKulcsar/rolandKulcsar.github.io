@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Face detection on images</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="sidebar">
+        <form id="js-form" class="sidebar-form" autocomplete="off">
+            <fieldset>
+                <legend>Library</legend>
+                <select id="select_library">
+                    <option value="ccv">ccv</option>
+                    <option value="jsobjectdetect">js-objectdetect</option>
+                    <option value="clmtrackr">clmtrackr</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Image</legend>
+                <input id="files" type="file" name="files[]" accept="image/*" />
+            </fieldset>
+            <fieldset>
+                <legend>Parameter</legend>
+                <input type="number" disabled/>
+            </fieldset>
+            <button id="js-start" type="button" onclick="onDetectClick()" data-action="reset">Detect</button>
+
+            <br />
+            <br />
+            <fieldset>
+                <legend>Output</legend>
+                <label id="label_detectionTime"></label>
+            </fieldset>
+        </form>
+    </div>
+    <main id="js-main" class="main">
+        <div id="container">
+            <canvas id="canvas_image" width="1280" height="720"></canvas>
+            <canvas id="canvas_overlay" width="1280" height="720"></canvas>
+            <canvas id="canvas-tip" width="1280" height="720"></canvas>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="script/image.js"></script>
+
+    <script type="text/javascript" src="script/ccv/ccv.js"></script>
+    <script type="text/javascript" src="script/ccv/face.js"></script>
+
+    <script type="text/javascript" src="script/objectdetect/objectdetect.js"></script>
+    <script type="text/javascript" src="script/objectdetect/objectdetect.frontalface.js"></script>
+    <script type="text/javascript" src="script/objectdetect/objectdetect.profileface.js"></script>
+    <script type="text/javascript" src="script/objectdetect/objectdetect.mouth.js"></script>
+    <script type="text/javascript" src="script/objectdetect/objectdetect.eye.js"></script>
+    <script type="text/javascript" src="script/objectdetect/objectdetect.nose.js"></script>
+
+    <script src="script/clmtrackr/model_pca_20_svm.js"></script>
+    <script src="script/clmtrackr/clmtrackr.js"></script>
+</body>
+</html>
