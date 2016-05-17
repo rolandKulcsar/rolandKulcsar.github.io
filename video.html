@@ -18,14 +18,23 @@
                 </select>
             </fieldset>
             <fieldset>
-                <legend>YouTube video link</legend>
-                <input id="youtube-url" type="url" disabled />
-            </fieldset>
-            <fieldset>
-                <legend>Delay(ms)</legend>
-                <input type="number" id="delay" value="50" />
+                <legend>Frame time limit(ms)</legend>
+                <input type="number" id="delay" value="66" />
             </fieldset>
             <button id="js-start" type="button" onclick="start()">Start</button>
+            <br/>
+            <br />
+            <fieldset>
+                <legend>Performance</legend>
+                <label>Current FPS: </label>
+                <label id="currentFpsCounter">-</label> <br/>
+                <label>Min. FPS: </label> 
+                <label id="minFpsCounter">-</label> <br />
+                <label>Max. FPS:</label> 
+                <label id="maxFpsCounter">-</label> <br />
+                <label>Avg. FPS:</label> 
+                <label id="avgFpsCounter">-</label> <br />
+            </fieldset>
         </form>
     </div>
     <main id="js-main" class="main">

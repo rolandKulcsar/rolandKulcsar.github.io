@@ -172,7 +172,12 @@ function jsObjectDetect() {
 function clmtrackrDetect() {
     ctrack = new clm.tracker({ stopOnConvergence: true });
     ctrack.init(pModel);
+
+    var start = performance.now();
     ctrack.start(canvas);
+    var end = performance.now();
+
+    printTrackingTime(end - start);
 
     document.addEventListener("clmtrackrNotFound", function (event) {
         ctrack.stop();
@@ -190,6 +195,7 @@ function clmtrackrDetect() {
     function drawLoop() {
         drawRequest = requestAnimationFrame(drawLoop);
         overlayContext.clearRect(0, 0, overlay.width, overlay.height);
+
         if (ctrack.getCurrentPosition()) {
             ctrack.draw(overlay);
         }
